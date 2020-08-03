@@ -32,6 +32,16 @@
     margin:0;
     padding:20px;
   }
+  #grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+  }
+  #grid ol {
+    padding-left:33px;
+  }
+  #grid #article {
+    padding-left: 25px;
+  }
 </style>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -48,12 +58,13 @@
 
 <body>
 <h1><a href="index.html">LEARN SPORTS</a></h1>
+<div id="grid">
 <ol>
 <li><a href="1.html">수영</a></li>
 <li><a href="2.html" class="saw" id="active">축구</a></li>
 <li><a href="3.html">야구</a></li>
 </ol>
-
+<div id="article">
 <h2>FOOTBALL CLASS</h2>
 
 <strong>축구 <u>규정</u></strong>
@@ -62,7 +73,8 @@
 <p>길이는 최소 90m, 최대 120m이며 너비(폭)는 최소 45m, 최대 90m이어야 한다.</p>
 <p>국제 경기는 길이가 최소 100m에서 최대 110m 이내여야 하며 너비(폭)는 최소 <p>64m에서 최대 75m 이내여야 한다.</p>
 <p>경기는 각각 11명이 넘지 않게 편성된 두 팀에 의하여 행하며, 팀 중에 한 명은 골키퍼이다.</p>
-
+</div>
+</div>
 <p>
   <div id="disqus_thread"></div>
   <script>
