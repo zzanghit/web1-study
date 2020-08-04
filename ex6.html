@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Loop & Array</h1>
+    <h2>Co workers</h2>
+    <ul>
+      <li>A</li>
+      <li>B</li>
+      <li>C</li>
+      <li>D</li>
+    </ul>
+    <ul>
+    <script>
+      var i = 0;
+      var coworkers = ['A', 'B','C', 'D'];
+      var colen = coworkers.length;
+      while(i<colen) {
+        document.write('<li><a href="http://A.com/'+coworkers[i]+'">'+coworkers[i]+'</a></li>');
+        i++;
+      }
+    </script>
+    </ul>
+  </body>
+</html>

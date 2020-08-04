@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Array</h1>
+    <h2>Syntax</h2>
+    <script>
+      var coworkers = ["zzang", "hit"];
+    </script>
+    <h2>get</h2>
+    <script>
+      document.write(coworkers[0]);
+      document.write(coworkers[1]);
+    </script>
+    <h2>add</h2>
+    <script>
+      coworkers.push('JS');
+      coworkers.push('WEB');
+    </script>
+    <h2>count</h2>
+    <script>
+      document.write(coworkers.length);
+    </script>
+    <h2>print</h2>
+    <script>
+      var i = 0;
+      var colen = coworkers.length;
+      while(i<colen) {
+        document.write(coworkers[i]+'<br/>');
+        i++;
+      }
+    </script>
+  </body>
+</html>
