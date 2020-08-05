@@ -4,6 +4,36 @@
 <title>Training Room</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
+<script>
+  function ND_Handler(self) {
+    var target = document.querySelector('body');
+    if (self.value === 'Night') {
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      self.value = 'Day';
+
+      var alist = document.querySelectorAll('a');
+      var i=0;
+      while (i<alist.length) {
+        alist[i].style.color='powderblue';
+        i++;
+      }
+    }
+    else {
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      self.value = 'Night';
+
+      var alist = document.querySelectorAll('a');
+      var i=0;
+      while (i<alist.length) {
+        alist[i].style.color='blue';
+        i++;
+      }
+    }
+  }
+
+</script>
 <!-- css
 <style>
   body {
@@ -69,6 +99,8 @@
 </head>
 
 <body>
+  <input type="button" value="Night" onclick="ND_Handler(this);">
+<!-- 함수로 변환해보기
   <input type="button" value="Night" onclick="
   var target = document.querySelector('body');
   if (this.value === 'Night') {
@@ -95,7 +127,7 @@
       i++;
     }
   }
-">
+"> -->
 <h1><a href="index.html">LEARN SPORTS</a></h1>
 <!-- 중복된 코드 조건문으로 제거
 <input type="button" value="Night" onclick="
