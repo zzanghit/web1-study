@@ -172,7 +172,7 @@ colors.jf 파일로 이동 */
   "> -->
   <input type="button" value="Night" onclick="ND_Handler(this);">
 
-<h1><a href="index.html">LEARN SPORTS</a></h1>
+<h1><a onclick="fetchPage('sports')">LEARN SPORTS</a></h1>
 <!-- 중복된 코드 조건문으로 제거
 <input type="button" value="Night" onclick="
 document.querySelector('body').style.backgroundColor = 'black';
@@ -195,16 +195,19 @@ else {
   document.querySelector('#N_D').value = 'Night';
 } -->
 
-
-
-
 <div id="grid">
-
+<!-- ajax를 이용해보자
 <ol>
   <li><a href="1.html" class="saw" id="active">수영</a></li>
   <li><a href="2.html" class="saw" id="active">축구</a></li>
   <li><a href="3.html" class="saw" id="active">농구</a></li>
+</ol> -->
+<ol>
+  <li><a class="saw" id="active" onclick="fetchPage('swimming')">수영</a></li>
+  <li><a href="2.html" class="saw" id="active">축구</a></li>
+  <li><a href="3.html" class="saw" id="active">농구</a></li>
 </ol>
+
 <div id="article">
 <!--
 <h1><a href="index.html"><font color="red">LEARN SPORTS</font></a></h1>
@@ -214,13 +217,10 @@ else {
 <li><a href="3.html"><font color="red">야구</font></a></li>
 </ol>
 -->
-<h2><a href="https://en.wikipedia.org/wiki/Sport" target="_blank" title="define sport">SPORTS</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/o7W7OvETO40" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<p>스포츠(영어: Sports)는 일정한 규칙에 따라 개인이나 단체끼리 속력, 지구력, 기능 따위를 겨루는 활동이다. 신체 활동을 비롯하여 도구 혹은 동물의 힘을 빌려 하는 여러 운동과 게임이 포함된다.</p>
-<p>스포츠는 영어에서 온 외래어로 본래 여가를 뜻하는 옛 프랑스어 desport에서 유래한 단어이다. 대한민국에서는 운동경기(運動競技)라고 불리기도 한다.</p>
-<p>스포츠는 운동에 참여하는 사람의 수와 형태에 따라서 한 사람 한 사람이 하는 개인 운동과 여러 사람이 참여하는 단체 운동으로 나뉜다. 여기에서 스포츠는 개인의 건강을 유지하는 데 도움을 줄 뿐만 아니라, 단체 운동의 경우에는 경쟁심을 고취하여 구성원의 협동 정신을 높이는 좋은 효과를 갖고 있다.</p>
-<p>스포츠는 또한 뛰어난 운동 선수들의 경쟁과 보다 나은 기록을 추구함으로써 사람이 가진 신체적 능력의 한계에 도전하는 활동이라고도 볼 수 있다. 이와 같은 활동은 스포츠를 몸소 하지 않는 사람들에게도 관심과 흥미를 일깨움으로써 스포츠의 대중화가 이루어지며, 경기라는 형태로 대중 생활의 한 몫을 차지하고 있다.</p>
+
+<article></article>
+
 </div>
 </div>
 <p>
@@ -258,6 +258,14 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!-- End of Tawk.to Script -->
-
+<script>
+  function fetchPage(name) {
+    fetch(name).then(function(response){
+    response.text().then(function(text){
+    document.querySelector('article').innerHTML = text;
+    })
+  });
+  }
+</script>
 </body>
 </html>
