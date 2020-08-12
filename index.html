@@ -274,7 +274,18 @@ s0.parentNode.insertBefore(s1,s0);
   }
   fetch('list').then(function(response){
   response.text().then(function(text){
-  document.querySelector('#nav').innerHTML = text;})
+    var items = text.split(',');
+    var i = 0;
+    var tags = '';
+    while(i<items.length) {
+      var item = items[i];
+      item = item.trim();
+      console.log(item);
+      var tag = '<li><a class="saw" id="active" href="#!'+item+'" onclick="fetchPage(\''+item+'\')">'+item+'</a></li>';
+      tags = tags + tag;
+      i++;
+    }
+  document.querySelector('#nav').innerHTML = tags;})
   });
 </script>
 </body>
