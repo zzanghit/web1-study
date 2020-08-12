@@ -202,10 +202,11 @@ else {
   <li><a href="2.html" class="saw" id="active">축구</a></li>
   <li><a href="3.html" class="saw" id="active">농구</a></li>
 </ol> -->
-<ol>
+<ol id="nav">
+  <!-- list 파일로 이동
   <li><a href="#!swimming" class="saw" id="active" onclick="fetchPage('swimming')">수영</a></li>
   <li><a href="2.html" class="saw" id="active">축구</a></li>
-  <li><a href="3.html" class="saw" id="active">농구</a></li>
+  <li><a href="3.html" class="saw" id="active">농구</a></li> -->
 </ol>
 
 <div id="article">
@@ -271,6 +272,10 @@ s0.parentNode.insertBefore(s1,s0);
   } else {
     fetchPage('Welcome');
   }
+  fetch('list').then(function(response){
+  response.text().then(function(text){
+  document.querySelector('#nav').innerHTML = text;})
+  });
 </script>
 </body>
 </html>
